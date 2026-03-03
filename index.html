@@ -1,114 +1,74 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ohoh Super App</title>
+    <title>ohoh - Super App</title>
     <style>
-        body {
-            background-color: #000;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 10px;
-        }
-        .container {
-            max-width: 600px;
-            margin: auto;
-        }
-        .header-section {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        /* ohoh अब फेसबुक नीला है और नीचे का नाम हट गया है */
-        .logo-text {
-            color: #1877F2; 
-            font-size: 50px;
-            font-weight: bold;
-            margin: 0;
-            text-shadow: none; 
-        }
-        .card {
-            background-color: white;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            padding: 15px;
-            text-align: center;
-            text-decoration: none;
-            display: block;
-            transition: 0.3s;
-        }
-        /* गूगल के लिए iframe (यह काम करता है) */
-        .google-card { border: 4px solid #4285F4; }
+        body { background-color: black; color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 10px; text-align: center; }
         
-        /* यूट्यूब, फेसबुक, इंस्टाग्राम के लिए बड़े प्रीव्यू बॉक्स */
-        .youtube-card { border: 4px solid #FF0000; color: #FF0000; }
-        .facebook-card { border: 4px solid #1877F2; color: #1877F2; }
-        .instagram-card { border: 4px solid #E1306C; color: #E1306C; }
+        /* ohoh Balanced Symmetry - Slim Style */
+        .header-title { 
+            font-size: 32px; 
+            font-weight: 400; /* Patla font */
+            margin-bottom: 25px; 
+            letter-spacing: 2px;
+        }
+        
+        /* New Ordered Colors */
+        .edge-blue { color: #1877F2; }  /* Pehla aur Aakhri word */
+        .middle-peela { color: #FBBC05; } /* Beech ke 2 word */
 
-        .preview-box {
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            margin: 10px 0;
-        }
-        .btn-open {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: currentColor;
-            color: white;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            border-radius: 10px;
-        }
+        /* Professional Equal Cards */
+        .card { background: white; border-radius: 25px; padding: 25px; margin-bottom: 25px; color: black; border: 3px solid transparent; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
+        
+        .google-card { border-color: #4285F4; }
+        .youtube-card { border-color: #FF0000; }
+        .facebook-card { border-color: #1877F2; }
+        .instagram-card { border-color: #E4405F; }
+
+        .card-header { font-size: 20px; font-weight: 600; margin-bottom: 10px; }
+        .main-logo { width: 165px; height: 110px; object-fit: contain; margin: 15px 0; }
+
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; }
+        .btn-google { background-color: #4285F4; }
+        .btn-youtube { background-color: #FF0000; }
+        .btn-facebook { background-color: #1877F2; }
+        .btn-instagram { background-color: #E4405F; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div class="header-section">
-        <h1 class="logo-text">ohoh</h1>
+    <div class="header-title">
+        <span class="edge-blue">o</span><span class="middle-peela">h</span><span class="middle-peela">o</span><span class="edge-blue">h</span>
     </div>
 
     <div class="card google-card">
-        <h3 style="color: #4285F4;">🌐 Google Search</h3>
-        <iframe src="https://www.google.com/search?igu=1"></iframe>
+        <div class="card-header">Google Search</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="main-logo">
+        <a href="https://www.google.com" class="btn btn-google">गूगल खोजें</a>
     </div>
 
-    <a href="https://m.youtube.com" target="_blank" class="card youtube-card">
-        <h3>▶️ YouTube Videos</h3>
-        <div class="preview-box">📺</div>
-        <div class="btn-open" style="background-color: #FF0000;">यूट्यूब खोलें</div>
-    </a>
+    <div class="card youtube-card">
+        <div class="card-header">YouTube Videos</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" class="main-logo">
+        <a href="https://www.youtube.com" class="btn btn-youtube">यूट्यूब खोलें</a>
+    </div>
 
-    <a href="https://m.facebook.com" target="_blank" class="card facebook-card">
-        <h3>📘 Facebook Social</h3>
-        <div class="preview-box">👤</div>
-        <div class="btn-open" style="background-color: #1877F2;">फेसबुक खोलें</div>
-    </a>
+    <div class="card facebook-card">
+        <div class="card-header">Facebook Social</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" class="main-logo">
+        <a href="https://www.facebook.com" class="btn btn-facebook">फेसबुक खोलें</a>
+    </div>
 
-    <a href="https://www.instagram.com" target="_blank" class="card instagram-card">
-        <h3>📸 Instagram Explore</h3>
-        <div class="preview-box">🖼️</div>
-        <div class="btn-open" style="background-color: #E1306C;">इंस्टाग्राम खोलें</div>
-    </a>
+    <div class="card instagram-card">
+        <div class="card-header">Instagram Explore</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="main-logo">
+        <a href="https://www.instagram.com" class="btn btn-instagram">इंस्टाग्राम खोलें</a>
+    </div>
 
-    <footer style="text-align: center; color: #888; padding: 20px;">
-        Developed by Ajay Kumar
-    </footer>
-</div>
+    <p style="font-size: 14px; color: #888; margin-top: 40px; font-weight: bold;">Developed by ** Ajay Kumar</p>
 
 </body>
-            </html>
-            
+                </html>
+                
