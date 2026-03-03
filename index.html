@@ -5,44 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohoh - The Universe Ajay Kumar</title>
     <style>
-        body { background-color: #121212; color: white; font-family: sans-serif; text-align: center; padding: 10px; margin: 0; }
-        h1 { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; font-size: 2.5rem; }
-        .super-box { background: #fff; padding: 10px; border-radius: 20px; margin: 20px auto; max-width: 600px; color: #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .header-text { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block; }
-        iframe { width: 100%; height: 500px; border: none; border-radius: 15px; }
+        body { background-color: #121212; color: white; font-family: sans-serif; text-align: center; padding: 15px; margin: 0; }
+        h1 { color: #00e5ff; text-shadow: 0 0 10px #00e5ff; font-size: 2.8rem; margin-bottom: 5px; }
+        .sub-title { color: #f1c40f; font-weight: bold; margin-bottom: 25px; }
         
-        /* अलग-अलग रंगों के बॉर्डर */
-        .google-border { border: 4px solid #4285F4; }
-        .youtube-border { border: 4px solid #FF0000; }
-        .fb-border { border: 4px solid #1877F2; }
-        .insta-border { border: 4px solid #E1306C; }
+        .super-box { background: #fff; padding: 15px; border-radius: 20px; margin: 20px auto; max-width: 500px; color: #333; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .header-text { font-weight: bold; font-size: 1.3rem; margin-bottom: 12px; display: block; }
+        
+        /* बटन स्टाइल */
+        .btn { display: block; padding: 15px; color: white; text-decoration: none; border-radius: 12px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; }
+        .btn:active { transform: scale(0.95); }
+
+        .google-btn { background: #4285F4; }
+        .youtube-btn { background: #FF0000; }
+        .fb-btn { background: #1877F2; }
+        .insta-btn { background: linear-gradient(45deg, #f09433, #dc2743, #cc2366); }
+
+        /* Google के लिए छोटा ब्राउज़र (यह ब्लॉक नहीं होता) */
+        iframe { width: 100%; height: 350px; border: none; border-radius: 10px; margin-top: 10px; }
     </style>
 </head>
 <body>
 
     <h1>ohoh</h1>
+    <div class="sub-title">The Universe Ajay Kumar - Super App</div>
 
-    <div class="super-box google-border">
+    <div class="super-box" style="border: 3px solid #4285F4;">
         <span class="header-text" style="color: #4285F4;">🌐 Google Search</span>
         <iframe src="https://www.google.com/search?igu=1"></iframe>
     </div>
 
-    <div class="super-box youtube-border">
-        <span class="header-text" style="color: #FF0000;">▶️ YouTube Video Player</span>
-        <iframe src="https://m.youtube.com"></iframe>
+    <div class="super-box" style="border: 3px solid #FF0000;">
+        <span class="header-text" style="color: #FF0000;">▶️ YouTube Videos</span>
+        <a href="https://m.youtube.com" class="btn youtube-btn">यूट्यूब खोलें</a>
     </div>
 
-    <div class="super-box fb-border">
+    <div class="super-box" style="border: 3px solid #1877F2;">
         <span class="header-text" style="color: #1877F2;">📘 Facebook Social</span>
-        <iframe src="https://m.facebook.com"></iframe>
+        <a href="https://m.facebook.com" class="btn fb-btn">फेसबुक खोलें</a>
     </div>
 
-    <div class="super-box insta-border">
+    <div class="super-box" style="border: 3px solid #E1306C;">
         <span class="header-text" style="color: #E1306C;">📸 Instagram Explore</span>
-        <iframe src="https://www.instagram.com"></iframe>
+        <a href="https://www.instagram.com" class="btn insta-btn">इंस्टाग्राम खोलें</a>
     </div>
 
-    <p style="color: #666; font-size: 12px; margin-top: 30px;">Created by Ajay Kumar</p>
+    <p style="color: #888; font-size: 12px; margin-top: 40px;">Developed by Ajay Kumar</p>
 
 </body>
 </html>
