@@ -9,9 +9,14 @@
             margin: 0; 
             padding: 20px; 
             display: flex; 
-            justify-content: center; 
+            flex-direction: column;
+            align-items: center;
             background-color: #f0f2f5; 
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
         }
         .grid-container { 
             display: grid; 
@@ -22,18 +27,20 @@
         }
         .app-card { 
             background-color: white; 
-            border-radius: 18px; 
-            height: 110px; 
+            border-radius: 20px; 
+            height: 120px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             text-decoration: none; 
-            border: 1px solid #ddd; 
-            transition: transform 0.2s;
+            border: 1px solid #eee; 
+            transition: transform 0.2s, background-color 0.2s;
         }
+        /* क्लिक करने पर बटन जैसा अहसास */
         .app-card:active {
-            transform: scale(0.95);
+            transform: scale(0.92);
+            background-color: #f8f9fa;
         }
         .app-logo { 
             width: 75px; 
@@ -44,32 +51,25 @@
 </head>
 <body>
 
+    <h2>Ajay Kumar's Dashboard</h2>
+
     <div class="grid-container">
         <a href="https://www.google.com" class="app-card">
-            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" class="app-logo">
+            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" class="app-logo" alt="Google">
         </a>
 
-        <a href="https://www.youtube.com" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo">
+        <a href="intent://www.youtube.com/#Intent;scheme=http;package=com.google.android.youtube;end" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo" alt="YouTube">
         </a>
 
-        <a href="https://www.facebook.com" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
+        <a href="fb://facewebmodal/f?href=https://www.facebook.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo" alt="Facebook">
         </a>
 
-        <a href="https://www.instagram.com" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo">
+        <a href="intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo" alt="Instagram">
         </a>
 
-        <a href="https://web.whatsapp.com" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
-        </a>
-
-        <a href="https://www.google.com/maps" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="app-logo">
-        </a>
-    </div>
-
-</body>
-            </html>
-    
+        <a href="intent://send/#Intent;scheme=whatsapp;package=com.whatsapp;end" class="app-card">
+            <img
+                
