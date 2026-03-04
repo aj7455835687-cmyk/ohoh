@@ -1,26 +1,26 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Original Dashboard - Ajay Kumar</title>
+    <title>Dashboard</title>
     <style>
         body { 
             margin: 0; 
             padding: 20px; 
             display: flex; 
-            flex-direction: column;
-            align-items: center;
+            justify-content: center; 
+            align-items: flex-start;
             background-color: #f0f2f5; 
             font-family: sans-serif;
         }
-        h2 { color: #1a73e8; margin-bottom: 20px; }
         .grid-container { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
             gap: 15px; 
             width: 100%; 
             max-width: 400px; 
+            margin-top: 10px;
         }
         .app-card { 
             background-color: white; 
@@ -32,13 +32,20 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             text-decoration: none; 
             border: 1px solid #eee; 
+            transition: transform 0.2s;
         }
-        .app-logo { width: 75px; height: 75px; object-fit: contain; }
+        /* क्लिक करने पर बटन जैसा दबने वाला इफ़ेक्ट */
+        .app-card:active { 
+            transform: scale(0.95); 
+        }
+        .app-logo { 
+            width: 75px; 
+            height: 75px; 
+            object-fit: contain; 
+        }
     </style>
 </head>
 <body>
-
-    <h2>Ajay Kumar's Dashboard</h2>
 
     <div class="grid-container">
         <a href="https://www.google.com" class="app-card">
@@ -49,15 +56,15 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo">
         </a>
 
-        <a href="fb://facewebmodal/f?href=https://www.facebook.com" class="app-card">
+        <a href="https://www.facebook.com/n/?feed" class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
         </a>
 
-        <a href="instagram://user" class="app-card">
+        <a href="https://www.instagram.com" class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo">
         </a>
 
-        <a href="https://wa.me/?text=Hello" class="app-card">
+        <a href="https://wa.me/?text=Hi" class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
         </a>
 
@@ -68,3 +75,4 @@
 
 </body>
 </html>
+
