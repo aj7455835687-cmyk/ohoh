@@ -1,51 +1,18 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ohoh - Super App</title>
     <style>
-        /* Touch Response aur Scrolling ko Fast karne ke liye */
-        html {
-            -webkit-text-size-adjust: none;
-            touch-action: pan-y;
-            scroll-behavior: smooth;
-        }
-
-        body { 
-            background-color: black; 
-            color: white; 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            margin: 0; 
-            padding: 10px; 
-            text-align: center;
-            /* Anti-Lag Properties */
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+        body { background-color: black; color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 10px; text-align: center; }
         
-        /* ohoh Balanced Symmetry - Ajay Kumar Special */
+        /* ohoh Balanced Symmetry - Slim Style */
         .header-title { font-size: 32px; font-weight: 400; margin-bottom: 25px; letter-spacing: 2px; }
         .edge-blue { color: #1877F2; }  
         .middle-peela { color: #FBBC05; } 
 
-        .card { 
-            background: white; 
-            border-radius: 25px; 
-            padding: 25px; 
-            margin-bottom: 25px; 
-            color: black; 
-            border: 3px solid transparent; 
-            min-height: 280px; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: space-between;
-            /* GPU Power Use karne ke liye */
-            transform: translateZ(0);
-            will-change: transform;
-        }
+        .card { background: white; border-radius: 25px; padding: 25px; margin-bottom: 25px; color: black; border: 3px solid transparent; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
         
         .google-card { border-color: #4285F4; }
         .youtube-card { border-color: #FF0000; }
@@ -54,7 +21,7 @@
 
         .main-logo { width: 165px; height: 110px; object-fit: contain; margin: 15px 0; }
 
-        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; }
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; transition: 0.3s; }
         .btn-google { background-color: #4285F4; }
         .btn-youtube { background-color: #FF0000; }
         .btn-facebook { background-color: #1877F2; }
@@ -70,34 +37,30 @@
     <div class="card google-card">
         <div style="font-weight:600">Google Search</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="main-logo">
-        <a href="https://www.google.com" class="btn btn-google">Google Search</a>
+        <a href="https://www.google.com" class="btn btn-google">गूगल खोलें</a>
     </div>
 
     <div class="card youtube-card">
-        <div style="font-weight:600">YouTube Videos</div>
+        <div style="font-weight:600">YouTube App</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" class="main-logo">
-        <a href="https://m.youtube.com" class="btn btn-youtube">Watch Videos</a>
+        <a href="intent://www.youtube.com/#Intent;package=com.google.android.youtube;scheme=https;end" class="btn btn-youtube">असली YouTube खोलें</a>
     </div>
 
     <div class="card facebook-card">
-        <div style="font-weight:600">Facebook Social</div>
+        <div style="font-weight:600">Facebook App</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" class="main-logo">
-        <a href="https://m.facebook.com" class="btn btn-facebook">Open Facebook</a>
+        <a href="intent://#Intent;package=com.facebook.katana;scheme=fb;end" class="btn btn-facebook">असली Facebook खोलें</a>
     </div>
 
     <div class="card instagram-card">
-        <div style="font-weight:600">Instagram Explore</div>
+        <div style="font-weight:600">Instagram App</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="main-logo">
-        <a href="https://www.instagram.com" class="btn btn-instagram">Open Instagram</a>
+        <a href="intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end" class="btn btn-instagram">असली Instagram खोलें</a>
     </div>
 
-    <p style="font-size: 14px; color: #888; margin-top: 40px;">Developed by **The Universe Ajay Kumar**</p>
-
-    <script>
-        document.addEventListener('touchstart', function(){}, {passive: true});
-        console.log("ohoh Engine Optimized for Rishi Muni Ajay Kumar");
-    </script>
+    <p style="font-size: 14px; color: #888; margin-top: 40px;"> Ajay Kumar**</p>
 
 </body>
-               </html>
-               
+ </html>
+
+    
