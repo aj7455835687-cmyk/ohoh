@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,9 @@
             flex-direction: column;
             align-items: center;
             background-color: #f0f2f5; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: sans-serif;
         }
-        h2 {
-            color: #1a73e8;
-            margin-bottom: 20px;
-        }
+        h2 { color: #1a73e8; margin-bottom: 20px; }
         .grid-container { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); 
@@ -35,18 +32,8 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
             text-decoration: none; 
             border: 1px solid #eee; 
-            transition: transform 0.2s, background-color 0.2s;
         }
-        /* क्लिक करने पर बटन जैसा अहसास */
-        .app-card:active {
-            transform: scale(0.92);
-            background-color: #f8f9fa;
-        }
-        .app-logo { 
-            width: 75px; 
-            height: 75px; 
-            object-fit: contain; 
-        }
+        .app-logo { width: 75px; height: 75px; object-fit: contain; }
     </style>
 </head>
 <body>
@@ -55,21 +42,29 @@
 
     <div class="grid-container">
         <a href="https://www.google.com" class="app-card">
-            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" class="app-logo" alt="Google">
+            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" class="app-logo">
         </a>
 
-        <a href="intent://www.youtube.com/#Intent;scheme=http;package=com.google.android.youtube;end" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo" alt="YouTube">
+        <a href="https://www.youtube.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo">
         </a>
 
         <a href="fb://facewebmodal/f?href=https://www.facebook.com" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo" alt="Facebook">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
         </a>
 
-        <a href="intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo" alt="Instagram">
+        <a href="instagram://user" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo">
         </a>
 
-        <a href="intent://send/#Intent;scheme=whatsapp;package=com.whatsapp;end" class="app-card">
-            <img
-                
+        <a href="https://wa.me/?text=Hello" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
+        </a>
+
+        <a href="https://maps.google.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="app-logo">
+        </a>
+    </div>
+
+</body>
+</html>
