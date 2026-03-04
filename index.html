@@ -1,16 +1,16 @@
-       <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>ohoh - Super App</title>
     <style>
-        /* Force Hardware Acceleration for Smooth Video & Scroll */
-        * {
-            -webkit-perspective: 1000;
-            backface-visibility: hidden;
-            transform-style: preserve-3d;
+        /* Touch Response aur Scrolling ko Fast karne ke liye */
+        html {
+            -webkit-text-size-adjust: none;
+            touch-action: pan-y;
+            scroll-behavior: smooth;
         }
 
         body { 
@@ -20,16 +20,16 @@
             margin: 0; 
             padding: 10px; 
             text-align: center;
+            /* Anti-Lag Properties */
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            touch-action: pan-y; /* Scroll speed fast karne ke liye */
         }
         
-        /* ohoh Balanced Symmetry - Slim Style (Facebook Blue & Yellow) */
+        /* ohoh Balanced Symmetry - Ajay Kumar Special */
         .header-title { font-size: 32px; font-weight: 400; margin-bottom: 25px; letter-spacing: 2px; }
         .edge-blue { color: #1877F2; }  
         .middle-peela { color: #FBBC05; } 
 
-        /* Optimized High-Speed Cards */
         .card { 
             background: white; 
             border-radius: 25px; 
@@ -42,7 +42,9 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: space-between;
-            box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+            /* GPU Power Use karne ke liye */
+            transform: translateZ(0);
+            will-change: transform;
         }
         
         .google-card { border-color: #4285F4; }
@@ -52,8 +54,7 @@
 
         .main-logo { width: 165px; height: 110px; object-fit: contain; margin: 15px 0; }
 
-        /* AK-Special Fast Buttons */
-        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; transition: 0.1s; }
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; }
         .btn-google { background-color: #4285F4; }
         .btn-youtube { background-color: #FF0000; }
         .btn-facebook { background-color: #1877F2; }
@@ -87,10 +88,16 @@
     <div class="card instagram-card">
         <div style="font-weight:600">Instagram Explore</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="main-logo">
-        <a href="https://www.instagram.com/explore" class="btn btn-instagram">Open Instagram</a>
+        <a href="https://www.instagram.com" class="btn btn-instagram">Open Instagram</a>
     </div>
 
-    <p style="font-size: 14px; color: #888; margin-top: 40px; font-weight: bold;"> Ajay Kumar</p>
+    <p style="font-size: 14px; color: #888; margin-top: 40px;">Developed by **The Universe Ajay Kumar**</p>
+
+    <script>
+        document.addEventListener('touchstart', function(){}, {passive: true});
+        console.log("ohoh Engine Optimized for Rishi Muni Ajay Kumar");
+    </script>
 
 </body>
-</html>
+               </html>
+               
