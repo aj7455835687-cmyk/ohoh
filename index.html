@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Trending Apps Dashboard</title>
     <style>
         body { 
             margin: 0; 
             padding: 20px; 
             display: flex; 
             justify-content: center; 
-            align-items: flex-start;
             background-color: #f0f2f5; 
             font-family: sans-serif;
         }
@@ -20,12 +19,11 @@
             gap: 15px; 
             width: 100%; 
             max-width: 400px; 
-            margin-top: 10px;
         }
         .app-card { 
             background-color: white; 
             border-radius: 20px; 
-            height: 120px; 
+            height: 110px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
@@ -34,15 +32,8 @@
             border: 1px solid #eee; 
             transition: transform 0.2s;
         }
-        /* क्लिक करने पर बटन जैसा दबने वाला इफ़ेक्ट */
-        .app-card:active { 
-            transform: scale(0.95); 
-        }
-        .app-logo { 
-            width: 75px; 
-            height: 75px; 
-            object-fit: contain; 
-        }
+        .app-card:active { transform: scale(0.95); }
+        .app-logo { width: 70px; height: 70px; object-fit: contain; }
     </style>
 </head>
 <body>
@@ -56,23 +47,47 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo">
         </a>
 
-        <a href="https://www.facebook.com/n/?feed" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
+        <a href="https://wa.me/?text=Hi" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
         </a>
 
         <a href="https://www.instagram.com" class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo">
         </a>
 
-        <a href="https://wa.me/?text=Hi" class="app-card">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
+        <a href="https://www.facebook.com/n/?feed" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
+        </a>
+
+        <a href="phonepe://" class="app-card">
+            <img src="https://download.logo.wine/logo/PhonePe/PhonePe-Logo.wine.png" class="app-logo">
+        </a>
+
+        <a href="https://www.amazon.in" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" class="app-logo">
+        </a>
+
+        <a href="https://mail.google.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" class="app-logo">
+        </a>
+
+        <a href="https://chat.openai.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" class="app-logo">
+        </a>
+
+        <a href="https://play.google.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" class="app-logo">
         </a>
 
         <a href="https://maps.google.com" class="app-card">
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="app-logo">
         </a>
+
+        <a href="https://www.netflix.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" class="app-logo">
+        </a>
     </div>
 
 </body>
-</html>
-
+                </html>
+                
