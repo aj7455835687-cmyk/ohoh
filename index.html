@@ -1,50 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Access - ajay kumar</title>
+    <title>Original Dashboard - Ajay Kumar</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f2f5;
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            display: flex; 
+            justify-content: center; 
+            background-color: #f0f2f5; 
+            font-family: sans-serif;
         }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .grid-container { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px; 
+            width: 100%; 
+            max-width: 400px; 
         }
-        .btn {
-            padding: 20px 40px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            color: white;
-            border-radius: 10px;
+        .app-card { 
+            background-color: white; 
+            border-radius: 18px; 
+            height: 110px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            text-decoration: none; 
+            border: 1px solid #ddd; 
             transition: transform 0.2s;
         }
-        .btn:hover { transform: scale(1.05); }
-        .google { background-color: #4285F4; }
-        .youtube { background-color: #FF0000; }
-        .facebook { background-color: #1877F2; }
-        .instagram { background-color: #E4405F; }
+        .app-card:active {
+            transform: scale(0.95);
+        }
+        .app-logo { 
+            width: 75px; 
+            height: 75px; 
+            object-fit: contain; 
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <a href="https://www.google.com" class="btn google">Google</a>
-        <a href="https://www.youtube.com" class="btn youtube">YouTube</a>
-        <a href="https://www.facebook.com" class="btn facebook">Facebook</a>
-        <a href="https://www.instagram.com" class="btn instagram">Instagram</a>
+    <div class="grid-container">
+        <a href="https://www.google.com" class="app-card">
+            <img src="https://www.gstatic.com/images/branding/product/2x/googleg_96dp.png" class="app-logo">
+        </a>
+
+        <a href="https://www.youtube.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" class="app-logo">
+        </a>
+
+        <a href="fb://feed" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_(2019).png" class="app-logo">
+        </a>
+
+        <a href="instagram://user" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png" class="app-logo">
+        </a>
+
+        <a href="whatsapp://send" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="app-logo">
+        </a>
+
+        <a href="googlegmail://" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg" class="app-logo">
+        </a>
+
+        <a href="market://details?id=com.google.android.gms" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" class="app-logo">
+        </a>
+
+        <a href="https://pay.google.com" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" class="app-logo">
+        </a>
+
+        <a href="https://www.google.com/maps" class="app-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Google_Maps_icon_%282020%29.svg" class="app-logo">
+        </a>
     </div>
 
 </body>
     </html>
-
     
