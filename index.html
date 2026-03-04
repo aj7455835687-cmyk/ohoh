@@ -1,66 +1,48 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ohoh - Super App</title>
+    <title>Quick Access - ajay kumar</title>
     <style>
-        body { background-color: black; color: white; font-family: 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 10px; text-align: center; }
-        
-        /* ohoh Balanced Symmetry - Slim Style */
-        .header-title { font-size: 32px; font-weight: 400; margin-bottom: 25px; letter-spacing: 2px; }
-        .edge-blue { color: #1877F2; }  
-        .middle-peela { color: #FBBC05; } 
-
-        .card { background: white; border-radius: 25px; padding: 25px; margin-bottom: 25px; color: black; border: 3px solid transparent; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; }
-        
-        .google-card { border-color: #4285F4; }
-        .youtube-card { border-color: #FF0000; }
-        .facebook-card { border-color: #1877F2; }
-        .instagram-card { border-color: #E4405F; }
-
-        .main-logo { width: 165px; height: 110px; object-fit: contain; margin: 15px 0; }
-
-        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; transition: 0.3s; }
-        .btn-google { background-color: #4285F4; }
-        .btn-youtube { background-color: #FF0000; }
-        .btn-facebook { background-color: #1877F2; }
-        .btn-instagram { background-color: #E4405F; }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f2f5;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .btn {
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: scale(1.05); }
+        .google { background-color: #4285F4; }
+        .youtube { background-color: #FF0000; }
+        .facebook { background-color: #1877F2; }
+        .instagram { background-color: #E4405F; }
     </style>
 </head>
 <body>
 
-    <div class="header-title">
-        <span class="edge-blue">o</span><span class="middle-peela">h</span><span class="middle-peela">o</span><span class="edge-blue">h</span>
+    <div class="container">
+        <a href="https://www.google.com" class="btn google">Google</a>
+        <a href="https://www.youtube.com" class="btn youtube">YouTube</a>
+        <a href="https://www.facebook.com" class="btn facebook">Facebook</a>
+        <a href="https://www.instagram.com" class="btn instagram">Instagram</a>
     </div>
-
-    <div class="card google-card">
-        <div style="font-weight:600">Google Search</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="main-logo">
-        <a href="https://www.google.com" class="btn btn-google">गूगल खोलें</a>
-    </div>
-
-    <div class="card youtube-card">
-        <div style="font-weight:600">YouTube App</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" class="main-logo">
-        <a href="intent://www.youtube.com/#Intent;package=com.google.android.youtube;scheme=https;end" class="btn btn-youtube">असली YouTube खोलें</a>
-    </div>
-
-    <div class="card facebook-card">
-        <div style="font-weight:600">Facebook App</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" class="main-logo">
-        <a href="intent://#Intent;package=com.facebook.katana;scheme=fb;end" class="btn btn-facebook">असली Facebook खोलें</a>
-    </div>
-
-    <div class="card instagram-card">
-        <div style="font-weight:600">Instagram App</div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="main-logo">
-        <a href="intent://instagram.com/#Intent;package=com.instagram.android;scheme=https;end" class="btn btn-instagram">असली Instagram खोलें</a>
-    </div>
-
-    <p style="font-size: 14px; color: #888; margin-top: 40px;"> Ajay Kumar**</p>
 
 </body>
- </html>
-
-    
+</html>
