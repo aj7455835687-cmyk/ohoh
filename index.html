@@ -2,19 +2,47 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="render-process" content="fast">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ohoh - Super App</title>
     <style>
-        body { background-color: black; color: white; font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; text-align: center; }
+        /* Smooth Scrolling Enable */
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body { 
+            background-color: black; 
+            color: white; 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            padding: 10px; 
+            text-align: center;
+            overflow-x: hidden;
+            /* Touch Lag ko khatam karne ke liye */
+            touch-action: manipulation;
+        }
         
-        /* ohoh Balanced Symmetry - Slim & Professional */
+        /* ohoh Balanced Symmetry - Slim Style */
         .header-title { font-size: 32px; font-weight: 400; margin-bottom: 25px; letter-spacing: 2px; }
         .edge-blue { color: #1877F2; }  
         .middle-peela { color: #FBBC05; } 
 
-        /* Optimized Cards for Speed */
-        .card { background: white; border-radius: 25px; padding: 25px; margin-bottom: 25px; color: black; border: 3px solid transparent; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; overflow: hidden; }
+        /* Smooth Cards */
+        .card { 
+            background: white; 
+            border-radius: 25px; 
+            padding: 25px; 
+            margin-bottom: 25px; 
+            color: black; 
+            border: 3px solid transparent; 
+            min-height: 280px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: space-between;
+            will-change: transform; /* Fast Rendering */
+        }
         
         .google-card { border-color: #4285F4; }
         .youtube-card { border-color: #FF0000; }
@@ -23,8 +51,7 @@
 
         .main-logo { width: 165px; height: 110px; object-fit: contain; margin: 15px 0; }
 
-        /* Fast Action Buttons */
-        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; }
+        .btn { display: inline-block; padding: 15px 40px; border-radius: 35px; text-decoration: none; color: white; font-weight: bold; font-size: 16px; width: 85%; transition: 0.2s ease-in-out; }
         .btn-google { background-color: #4285F4; }
         .btn-youtube { background-color: #FF0000; }
         .btn-facebook { background-color: #1877F2; }
@@ -40,29 +67,29 @@
     <div class="card google-card">
         <div style="font-weight:600">Google Search</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" class="main-logo">
-        <a href="https://www.google.com" class="btn btn-google">तेज़ी से खोजें</a>
+        <a href="https://www.google.com" class="btn btn-google">Google Search</a>
     </div>
 
     <div class="card youtube-card">
         <div style="font-weight:600">YouTube Videos</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/YouTube_Logo_2017.svg" class="main-logo">
-        <a href="https://m.youtube.com" class="btn btn-youtube">वीडियो देखें</a>
+        <a href="https://m.youtube.com" class="btn btn-youtube">Watch Videos</a>
     </div>
 
     <div class="card facebook-card">
         <div style="font-weight:600">Facebook Lite</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" class="main-logo">
-        <a href="https://m.facebook.com" class="btn btn-facebook">फेसबुक खोलें</a>
+        <a href="https://m.facebook.com" class="btn btn-facebook">Open Facebook</a>
     </div>
 
     <div class="card instagram-card">
         <div style="font-weight:600">Instagram Explore</div>
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="main-logo">
-        <a href="https://www.instagram.com" class="btn btn-instagram">इंस्टाग्राम खोलें</a>
+        <a href="https://www.instagram.com" class="btn btn-instagram">Open Instagram</a>
     </div>
 
-    <p style="font-size: 14px; color: #888; margin-top: 40px;">Developed by ohoh </p>
+    <p style="font-size: 14px; color: #888; margin-top: 40px;"> Ajay Kumar</p>
 
 </body>
     </html>
-
+    
