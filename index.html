@@ -1,108 +1,181 @@
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>अजयकुमार डिजिटल सर्विस</title>
+    <title>Go on सर्वे बेस्ट ऑफर्स</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(to right, #1a2a6c, #f21212); display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; color: white; }
-        .app-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); width: 100%; max-width: 450px; color: #333; }
-        h2 { color: #1a2a6c; text-align: center; margin-bottom: 5px; }
-        .input-group { margin-bottom: 12px; }
-        label { display: block; margin-bottom: 4px; font-weight: bold; font-size: 14px; }
-        input, select, textarea { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 8px; box-sizing: border-box; transition: 0.3s; }
-        input:focus { border-color: #1a2a6c; outline: none; }
-        button { width: 100%; padding: 15px; background: #1a2a6c; color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; font-weight: bold; margin-top: 10px; }
-        button:hover { background: #f21212; }
-        #status { margin-top: 15px; text-align: center; font-weight: bold; padding: 10px; border-radius: 8px; display: none; }
+        :root {
+            --khaki-dark: #A89574;
+            --navy-blue: #000080;
+            --bg-color: #E6DCC3;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            border-top: 6px solid var(--navy-blue);
+        }
+
+        .form-container {
+            background: white;
+            width: 100%;
+            max-width: 550px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border: 1px solid var(--khaki-dark);
+            padding: 25px;
+        }
+
+        .form-header {
+            border-bottom: 2px solid #eee;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+        }
+
+        h1 {
+            color: #202124;
+            font-size: 28px;
+            margin: 0 0 15px 0;
+            line-height: 1.3;
+        }
+
+        .description {
+            color: #3c4043;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .input-group { margin-bottom: 25px; }
+        
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #202124;
+            font-size: 16px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 1.5px solid #ccc;
+            font-size: 16px;
+            outline: none;
+        }
+
+        input:focus {
+            border-bottom: 2px solid var(--navy-blue);
+        }
+
+        button {
+            background-color: var(--navy-blue);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        button:hover { background-color: #000066; }
     </style>
 </head>
 <body>
 
-<div class="app-card">
-    <h2>Ajaykumar Smart Portal</h2>
-    <p style="text-align:center; color: #666; margin-bottom: 20px;">अपना विवरण भरें और सेव करें</p>
-    
-    <form id="fullProfileForm">
+<div class="form-container">
+    <div class="form-header">
+        <h1>Go on सर्वे बेस्ट ऑफर्स के लिए जानकारी भरें</h1>
+        <div class="description">
+            नमस्ते! यह फॉर्म आपकी पसंद को बेहतर तरीके से समझने के लिए बनाया गया है। 
+            हमारा उद्देश्य आपको आपकी जरूरत के अनुसार सबसे बेहतरीन (Best) ऑफर्स, 
+            भारी डिस्काउंट और सही जानकारी समय पर पहुँचाना है। आपकी प्राइवेसी 
+            हमारे लिए महत्वपूर्ण है। अपना कीमती समय देने के लिए धन्यवाद!
+        </div>
+    </div>
+
+    <form id="dataForm">
         <div class="input-group">
-            <label>पूरा नाम</label>
-            <input type="text" name="name" id="name" placeholder="आपका नाम लिखें" required>
+            <label>आपका पूरा नाम</label>
+            <input type="text" name="name" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
-            <label>ईमेल एड्रेस</label>
-            <input type="email" name="email" id="email" placeholder="example@gmail.com" required>
+            <label>आपका मोबाइल नंबर</label>
+            <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
-            <label>मोबाइल नंबर</label>
-            <input type="tel" name="phone" id="phone" placeholder="74558xxxxx" required>
+            <label>आपका ईमेल (Gmail) पता</label>
+            <input type="email" name="email" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
-            <label>शहर / राज्य</label>
-            <input type="text" name="city" id="city" placeholder="जैसे: बरेली, उत्तर प्रदेश" required>
+            <label>आपका शहर</label>
+            <input type="text" name="city" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
             <label>आपकी उम्र</label>
-            <input type="number" name="age" id="age" placeholder="जैसे: 22" required>
+            <input type="number" name="age" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
-            <label>पढ़ाई / डिग्री</label>
-            <select name="edu" id="edu">
-                <option value="10th">10वीं पास</option>
-                <option value="12th">12वीं पास</option>
-                <option value="Graduate">ग्रेजुएट</option>
-                <option value="Post Graduate">पोस्ट ग्रेजुएट</option>
-            </select>
+            <label>की शिक्षा (पढ़ाई)</label>
+            <input type="text" name="edu" placeholder="Your answer" required>
         </div>
 
         <div class="input-group">
-            <label>आपकी खास स्किल (हुनर)</label>
-            <textarea name="skills" id="skills" rows="2" placeholder="जैसे: कंप्यूटर, टाइपिंग आदि"></textarea>
+            <label>आपका खास हुनर</label>
+            <input type="text" name="skills" placeholder="Your answer" required>
         </div>
 
-        <button type="submit" id="submitBtn">प्रोफाइल सेव करें</button>
+        <div class="input-group">
+            <label>आपका पसंदीदा खाना</label>
+            <input type="text" name="food" placeholder="Your answer" required>
+        </div>
+
+        <div class="input-group">
+            <label>आपका पसंदीदा खेल</label>
+            <input type="text" name="sport" placeholder="Your answer" required>
+        </div>
+        
+        <button type="submit" id="submitBtn">Submit</button>
     </form>
-
-    <div id="status"></div>
 </div>
 
 <script>
-  // अजयकुमार भाई, आपका भेजा हुआ लिंक यहाँ लगा दिया है
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbxI5yCC30OoW5b64E5Qlzc8OymOs122P0rFAP5nDPpFz-o5lLanshJtrWkpKAZmFKKI/exec';
-  
-  const form = document.getElementById('fullProfileForm');
-  const status = document.getElementById('status');
-  const btn = document.getElementById('submitBtn');
+    const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+    const form = document.getElementById('dataForm');
+    const btn = document.getElementById('submitBtn');
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    btn.disabled = true;
-    status.style.display = "block";
-    status.style.background = "#e3f2fd";
-    status.style.color = "#1565c0";
-    status.innerHTML = "प्रतीक्षा करें... डेटा सुरक्षित सेव हो रहा है";
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        btn.disabled = true;
+        btn.innerHTML = "Submitting...";
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-          status.style.background = "#e8f5e9";
-          status.style.color = "#2e7d32";
-          status.innerHTML = "✅ बधाई हो अजयकुमार!<br>डेटा सफलतापूर्वक Google Sheet में सेव हो गया।";
-          btn.disabled = false;
-          form.reset(); 
-      })
-      .catch(error => {
-          console.error('Error!', error.message);
-          status.style.background = "#ffebee";
-          status.style.color = "#c62828";
-          status.innerHTML = "❌ Error! डेटा सेव नहीं हुआ। लिंक या इंटरनेट चेक करें।";
-          btn.disabled = false;
-      });
-  });
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                alert("धन्यवाद अजयकुमार! डेटा सुरक्षित हो गया है।");
+                btn.disabled = false;
+                btn.innerHTML = "Submit";
+                form.reset();
+            })
+            .catch(error => {
+                alert("त्रुटि! कृपया फिर से प्रयास करें।");
+                btn.disabled = false;
+                btn.innerHTML = "Submit";
+            });
+    });
 </script>
 
 </body>
-       </html>
-       
+            </html>
+    
