@@ -1,181 +1,76 @@
-<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>kyorom सर्वे बेस्ट ऑफर्स</title>
+    <title>Go on - Public Opinion Portal</title>
     <style>
-        :root {
-            --khaki-dark: #A89574;
-            --navy-blue: #000080;
-            --bg-color: #E6DCC3;
-        }
-
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 15px;
-            display: flex;
-            justify-content: center;
-            border-top: 6px solid var(--navy-blue);
-        }
-
-        .form-container {
-            background: white;
-            width: 100%;
-            max-width: 550px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-            border: 1px solid var(--khaki-dark);
-            padding: 25px;
-        }
-
-        .form-header {
-            border-bottom: 2px solid #eee;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-        }
-
-        h1 {
-            color: #202124;
-            font-size: 28px;
-            margin: 0 0 15px 0;
-            line-height: 1.3;
-        }
-
-        .description {
-            color: #3c4043;
-            font-size: 15px;
-            line-height: 1.6;
-        }
-
-        .input-group { margin-bottom: 25px; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; padding: 20px; }
+        .poll-container { background: white; max-width: 400px; margin: auto; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 15px rgba(0,0,0,0.1); }
+        h2 { color: #333; }
+        .option-btn { display: block; width: 100%; margin: 10px 0; padding: 12px; border: none; background: #007bff; color: white; border-radius: 8px; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .option-btn:hover { background: #0056b3; }
         
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #202124;
-            font-size: 16px;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-bottom: 1.5px solid #ccc;
-            font-size: 16px;
-            outline: none;
-        }
-
-        input:focus {
-            border-bottom: 2px solid var(--navy-blue);
-        }
-
-        button {
-            background-color: var(--navy-blue);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 18px;
-            font-weight: bold;
-            width: 100%;
-        }
-
-        button:hover { background-color: #000066; }
+        /* रिजल्ट स्टाइल */
+        #results { display: none; text-align: left; margin-top: 20px; }
+        .bar-container { background: #eee; border-radius: 5px; margin-bottom: 10px; overflow: hidden; }
+        .bar { height: 25px; background: #28a745; text-align: right; padding-right: 10px; color: white; line-height: 25px; font-weight: bold; transition: width 1s ease-in-out; }
     </style>
 </head>
 <body>
 
-<div class="form-container">
-    <div class="form-header">
-        <h1>kyorom सर्वे बेस्ट ऑफर्स के लिए जानकारी भरें</h1>
-        <div class="description">
-            नमस्ते! यह फॉर्म आपकी पसंद को बेहतर तरीके से समझने के लिए बनाया गया है। 
-            हमारा उद्देश्य आपको आपकी जरूरत के अनुसार सबसे बेहतरीन (Best) ऑफर्स, 
-            भारी डिस्काउंट और सही जानकारी समय पर पहुँचाना है। आपकी प्राइवेसी 
-            हमारे लिए महत्वपूर्ण है। अपना कीमती समय देने के लिए धन्यवाद!
+    <div class="poll-container">
+        <h2>Go on - पब्लिक ओपिनियन</h2>
+        <p id="question">क्या भारत में पेट्रोल की कीमत कम होनी चाहिए?</p>
+
+        <div id="vote-options">
+            <button class="option-btn" onclick="submitVote('yes')">हाँ, बिल्कुल</button>
+            <button class="option-btn" onclick="submitVote('no')">नहीं, ठीक है</button>
+        </div>
+
+        <div id="results">
+            <h3>लाइव नतीजे:</h3>
+            <p>हाँ: <span id="yes-percent">0%</span></p>
+            <div class="bar-container">
+                <div id="yes-bar" class="bar" style="width: 0%;"></div>
+            </div>
+            
+            <p>नहीं: <span id="no-percent">0%</span></p>
+            <div class="bar-container">
+                <div id="no-bar" class="bar" style="width: 0%; background: #dc3545;"></div>
+            </div>
+            <p style="font-size: 12px; color: gray;">कुल वोट: <span id="total-votes">0</span></p>
         </div>
     </div>
 
-    <form id="dataForm">
-        <div class="input-group">
-            <label>आपका पूरा नाम</label>
-            <input type="text" name="name" placeholder="Your answer" required>
-        </div>
+    <script>
+        // डमी डेटा (शुरुआत के लिए)
+        let votes = { yes: 85, no: 15 };
 
-        <div class="input-group">
-            <label>आपका मोबाइल नंबर</label>
-            <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Your answer" required>
-        </div>
+        function submitVote(choice) {
+            // वोट बढ़ाना
+            votes[choice]++;
+            let total = votes.yes + votes.no;
 
-        <div class="input-group">
-            <label>आपका ईमेल (Gmail) पता</label>
-            <input type="email" name="email" placeholder="Your answer" required>
-        </div>
+            // प्रतिशत निकालना
+            let yesPercent = Math.round((votes.yes / total) * 100);
+            let noPercent = Math.round((votes.no / total) * 100);
 
-        <div class="input-group">
-            <label>आपका शहर</label>
-            <input type="text" name="city" placeholder="Your answer" required>
-        </div>
+            // UI अपडेट करना
+            document.getElementById('vote-options').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
 
-        <div class="input-group">
-            <label>आपकी उम्र</label>
-            <input type="number" name="age" placeholder="Your answer" required>
-        </div>
+            document.getElementById('yes-percent').innerText = yesPercent + '%';
+            document.getElementById('yes-bar').style.width = yesPercent + '%';
+            
+            document.getElementById('no-percent').innerText = noPercent + '%';
+            document.getElementById('no-bar').style.width = noPercent + '%';
 
-        <div class="input-group">
-            <label>की शिक्षा (पढ़ाई)</label>
-            <input type="text" name="edu" placeholder="Your answer" required>
-        </div>
+            document.getElementById('total-votes').innerText = total;
 
-        <div class="input-group">
-            <label>आपका खास हुनर</label>
-            <input type="text" name="skills" placeholder="Your answer" required>
-        </div>
-
-        <div class="input-group">
-            <label>आपका पसंदीदा खाना</label>
-            <input type="text" name="food" placeholder="Your answer" required>
-        </div>
-
-        <div class="input-group">
-            <label>आपका पसंदीदा खेल</label>
-            <input type="text" name="sport" placeholder="Your answer" required>
-        </div>
-        
-        <button type="submit" id="submitBtn">Submit</button>
-    </form>
-</div>
-
-<script>
-    const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
-    const form = document.getElementById('dataForm');
-    const btn = document.getElementById('submitBtn');
-
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        btn.disabled = true;
-        btn.innerHTML = "Submitting...";
-
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("धन्यवाद अजयकुमार! डेटा सुरक्षित हो गया है।");
-                btn.disabled = false;
-                btn.innerHTML = "Submit";
-                form.reset();
-            })
-            .catch(error => {
-                alert("त्रुटि! कृपया फिर से प्रयास करें।");
-                btn.disabled = false;
-                btn.innerHTML = "Submit";
-            });
-    });
-</script>
+            // अलर्ट देना
+            alert("आपकी राय के लिए धन्यवाद अजयकुमार!");
+        }
+    </script>
 
 </body>
-            </html>
-    
+</html>
